@@ -102,7 +102,7 @@ const HeroSection = () => {
             href={currentItem.video_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="absolute z-20 mb-20  bg-amber-600 hover:bg-amber-600 text-white p-4 md:p-6 rounded-full shadow-lg flex items-center justify-center"
+            className="absolute z-20 mb-24  bg-amber-600 hover:bg-amber-600 text-white p-4 md:p-6 rounded-full shadow-lg flex items-center justify-center"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             initial={{ opacity: 0 }}

@@ -16,6 +16,7 @@ import {
   Users,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { leelaLogo } from "../assets";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -119,9 +120,12 @@ const Navbar = () => {
       >
         <div className="container mx-auto px-4 flex justify-between items-center">
           <div className="flex items-center">
-            <img src="/logo.png" alt="Leela Farmhouse" className="h-12 w-12" />
-            <a href="#home" className="text-2xl font-bold text-amber-700 ml-2">
-              Leela Farmhouse
+            <a href="#home" className="text-2xl font-bold text-amber-700 ">
+              <img
+                src={leelaLogo}
+                alt="Leela Farmhouse"
+                className="h-30 w-60"
+              />
             </a>
           </div>
 

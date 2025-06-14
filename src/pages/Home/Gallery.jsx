@@ -52,7 +52,7 @@ const GallerySection = () => {
     },
     {
       id: 8,
-      src: "https://images.unsplash.com/photo-1600566752227-513c65e57d03?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+      src: "https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80",
       alt: "Cozy Fireplace",
       category: "Indoor",
     },
@@ -69,7 +69,7 @@ const GallerySection = () => {
     const interval = setInterval(() => {
       if (outdoorRef.current) {
         outdoorRef.current.scrollBy({
-          left: 300,
+          left: 600,
           behavior: "smooth",
         });
 
@@ -94,7 +94,7 @@ const GallerySection = () => {
     const interval = setInterval(() => {
       if (indoorRef.current) {
         indoorRef.current.scrollBy({
-          left: -300,
+          left: -600,
           behavior: "smooth",
         });
 
@@ -167,38 +167,42 @@ const GallerySection = () => {
               onMouseLeave={() => setIsAutoPlaying(true)}
             >
               {outdoorImages.map((image) => (
-                <motion.div
+                <div
                   key={image.id}
-                  className="min-w-[300px] sm:min-w-[400px] bg-white rounded-xl shadow-lg overflow-hidden border border-amber-100"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4 }}
-                  viewport={{ once: true }}
+                  className="min-w-[300px] sm:min-w-[400px] flex-shrink-0"
                 >
-                  <div className="relative h-64 sm:h-80">
-                    <img
-                      src={image.src}
-                      alt={image.alt}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent flex items-end p-6">
-                      <div>
-                        <h3 className="text-white font-bold text-lg">
-                          {image.alt}
-                        </h3>
-                        <p className="text-white/90 text-sm">
-                          {image.category}
-                        </p>
+                  <motion.div
+                    className="bg-white rounded-xl shadow-lg overflow-hidden border border-amber-100"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="relative h-64 sm:h-80">
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent flex items-end p-6">
+                        <div>
+                          <h3 className="text-white font-bold text-lg">
+                            {image.alt}
+                          </h3>
+                          <p className="text-white/90 text-sm">
+                            {image.category}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </motion.div>
+                  </motion.div>
+                </div>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Indoor Gallery Carousel (reverse auto-rotation) */}
+        {/* Indoor Gallery Carousel */}
         <div className="mb-20">
           <motion.h2
             className="text-3xl md:text-4xl font-bold text-center text-amber-800 mb-4"
@@ -241,32 +245,36 @@ const GallerySection = () => {
               onMouseLeave={() => setIsAutoPlaying(true)}
             >
               {indoorImages.map((image) => (
-                <motion.div
+                <div
                   key={image.id}
-                  className="min-w-[300px] sm:min-w-[400px] bg-white rounded-xl shadow-lg overflow-hidden border border-amber-100"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4 }}
-                  viewport={{ once: true }}
+                  className="min-w-[300px] sm:min-w-[400px] flex-shrink-0"
                 >
-                  <div className="relative h-64 sm:h-80">
-                    <img
-                      src={image.src}
-                      alt={image.alt}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent flex items-end p-6">
-                      <div>
-                        <h3 className="text-white font-bold text-lg">
-                          {image.alt}
-                        </h3>
-                        <p className="text-white/90 text-sm">
-                          {image.category}
-                        </p>
+                  <motion.div
+                    className="bg-white rounded-xl shadow-lg overflow-hidden border border-amber-100"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="relative h-64 sm:h-80">
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent flex items-end p-6">
+                        <div>
+                          <h3 className="text-white font-bold text-lg">
+                            {image.alt}
+                          </h3>
+                          <p className="text-white/90 text-sm">
+                            {image.category}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </motion.div>
+                  </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -320,7 +328,7 @@ const GallerySection = () => {
             </div>
             <div className="w-full md:w-1/2 h-64 md:h-auto">
               <motion.img
-                src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                src="https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80"
                 alt="Farmhouse interior"
                 className="w-full h-full object-cover"
                 initial={{ opacity: 0, x: 20 }}

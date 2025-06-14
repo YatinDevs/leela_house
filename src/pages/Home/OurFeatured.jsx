@@ -119,10 +119,10 @@ const OurFeatured = () => {
               <div className=" flex flex-col items-start justify-around gap-4 bg-amber-500 rounded-2xl p-6">
                 <div className="flex justify-center items-center gap-4">
                   <div className="bg-amber-700/50 p-3 rounded-full">
-                    <CalendarDays className="w-6 h-6" />
+                    <CalendarDays className="w-6 h-6 text-amber-100" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold">
+                    <h3 className="text-amber-100 text-2xl font-bold">
                       <CountUp end={12} duration={3} />+
                     </h3>
                     <p className="text-amber-100 text-sm">
@@ -133,10 +133,10 @@ const OurFeatured = () => {
 
                 <div className="flex justify-center items-center gap-4">
                   <div className="bg-amber-700/50 p-3 rounded-full">
-                    <Users className="w-6 h-6" />
+                    <Users className="w-6 h-6 text-amber-100" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold">
+                    <h3 className="text-2xl font-bold text-amber-100">
                       <CountUp end={1500} duration={3} />+
                     </h3>
                     <p className="text-amber-100 text-sm">Happy Guests</p>
